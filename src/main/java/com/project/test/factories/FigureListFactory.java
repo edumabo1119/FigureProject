@@ -41,7 +41,12 @@ public class FigureListFactory {
                 case 1:
                     return new Circle(generator.generateNumber(), randomColor);
                 case 2:
-                    return new Trapezium(generator.generateNumber(), generator.generateNumber(),
+                    int upLine = generator.generateNumber();
+                    int lowLine = generator.generateNumber();
+                    while (upLine == lowLine){
+                        upLine = generator.generateNumber();
+                    }
+                    return new Trapezium(upLine, lowLine,
                             generator.generateNumber(), randomColor);
                 case 3:
                     return new Triangle(generator.generateNumber(), generator.generateNumber(), randomColor);
